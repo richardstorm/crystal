@@ -1,0 +1,39 @@
+/** --------------------------------------------------------------
+ * Navbar
+ *
+ */
+ul.navbar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+ul.navbar li {
+  padding: 0 0 0 1em;
+  margin: 0;
+  display: inline;
+}
+
+ul.navbar li:first-child {
+  /*padding-left: 1em;*/
+}
+
+ul.navbar li.selected a {
+  background: #39f;
+}
+
+ul.navbar a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #ccc;
+  padding: 3px 6px 0px;
+  border-radius: 8px 8px 0px 0px;
+  display: inline-block;
+}  
+
+ul.navbar a:hover, ul.navbar li.selected a:hover {
+  background: #999;
+}

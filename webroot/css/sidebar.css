@@ -1,0 +1,35 @@
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: #39F;
+}
+
+#sidebar ul li a:hover {
+  text-decoration: underline;
+  color: #999;
+}
+
+#sidebar ul li[class="h1"] {
+  text-transform: uppercase;
+  margin-left: 0;
+}
+
+#sidebar ul li[class="h2"] {
+  margin-left: 10px;
+}
+
+#sidebar ul li[class="h3"] {
+  margin-left: 20px;
+}
+
+#sidebar ul li[class="h4"] {
+  margin-left: 30px;
+}
+
+#sidebar ul li[class="h5"] {
+  margin-left: 40px;
+}

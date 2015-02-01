@@ -1,0 +1,1 @@
+Crystal is a PHP-boilerplate/framework for small websites. Crystal was built by © Richard Storm (richard.storm@live.se) as part of a web course.
