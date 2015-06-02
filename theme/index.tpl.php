@@ -10,14 +10,15 @@
 <script src='<?=$modernizr?>'></script>
 </head>
 <body>
+  <?php if (isset($menu_top)):?><div id='menu_top'><?=$menu_top?></div><?php endif; ?>
   <div id='wrapper'>
     <div id='header'><?=$header?></div>
     <?php if(isset($navbar)): ?><div id='navbar'><?=get_navbar($navbar)?></div><?php endif; ?>
     <div id='content'>
       <?php if(!isset($sidebar)): ?><div id='main'><?=$main?></div>
       <?php else: ?><div id='mainsplit'><?=$main?></div><div id='sidebar'><?=$sidebar?></div><?php endif; ?>
+      <div id='footer'><?=$footer?></div>
     </div>
-    <div id='footer'><?=$footer?></div>
   </div>
 
 <?php if(isset($jquery) && isset($jquery_src)):?><script src='<?=$jquery_src?>'></script><?php endif; ?>

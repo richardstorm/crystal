@@ -1,39 +1,67 @@
-/** --------------------------------------------------------------
- * Navbar
- *
- */
-ul.navbar {
-  list-style-type: none;
+.navbar ul {
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0;
+  height: 40px;
+  background-image: url(../img/menu/menu.png);
+  background-repeat: repeat-x;
+  background-color: black;
+}
+
+.navbar li {
+  display: inline;
+  position: relative;
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid #ccc;
 }
 
-ul.navbar li {
-  padding: 0 0 0 1em;
-  margin: 0;
-  display: inline;
-}
-
-ul.navbar li:first-child {
-  /*padding-left: 1em;*/
-}
-
-ul.navbar li.selected a {
-  background: #39f;
-}
-
-ul.navbar a {
+.navbar a {
+  white-space: nowrap;
   color: white;
-  font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
-  background: #ccc;
-  padding: 3px 6px 0px;
-  border-radius: 8px 8px 0px 0px;
+  line-height: 40px;
+  font-size: 14px;
+  padding: 0 16px;
   display: inline-block;
-}  
+}
 
-ul.navbar a:hover, ul.navbar li.selected a:hover {
-  background: #999;
+.navbar a:hover,
+.navbar li.selected a, 
+.navbar li.selected-parent a {
+  background-image: url(../img/menu/menu_hover.png);
+  background-repeat: repeat-x;
+  background-color: #ddd;
+  text-decoration: none;
+  color: #666;
+}
+
+/* sub menu */
+.navbar ul ul {
+  position: absolute; 
+  left: -9999px; 
+  z-index: 2;
+  background: none;
+}
+
+.navbar li ul li a,
+.navbar li.selected ul li a, 
+.navbar li.selected-parent ul li a {
+  display: block;
+  background: black;
+  color: #999;
+  opacity: 0.85;
+}
+
+.navbar li ul li a:hover {
+  color: white;
+  background: black;
+}
+
+.navbar ul ul li {
+  border: none;
+}
+
+.navbar li:hover ul {
+  left: 0;
 }

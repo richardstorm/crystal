@@ -14,19 +14,19 @@ ini_set('output_buffering', 0);   // Do not buffer outputs, write directly
 
 
 /**
- * Start the session.
+ * Set timezone and character encoding.
  *
  */
-session_name(preg_replace('/[^a-z\d]/i', '', __DIR__));
-session_start();
+date_default_timezone_set('Europe/Stockholm');
+mb_internal_encoding('UTF-8');
 
 
 /**
  * Define Crystal paths.
  *
  */
-define('CRYSTAL_INSTALL_PATH', __DIR__ . '/..');
-define('CRYSTAL_THEME_PATH', CRYSTAL_INSTALL_PATH . '/theme/render.php');
+define('CRYSTAL_INSTALL_PATH', __DIR__ . DIRECTORY_SEPARATOR . '..');
+define('CRYSTAL_THEME_PATH', CRYSTAL_INSTALL_PATH . DIRECTORY_SEPARATOR . 'theme' . DIRECTORY_SEPARATOR . 'render.php');
 
 
 /**
@@ -34,6 +34,14 @@ define('CRYSTAL_THEME_PATH', CRYSTAL_INSTALL_PATH . '/theme/render.php');
  *
  */
 include(CRYSTAL_INSTALL_PATH . '/src/bootstrap.php');
+
+
+/**
+ * Start the session.
+ *
+ */
+session_name(preg_replace('/[^a-z\d]/i', '', __DIR__));
+session_start();
 
 
 /**
@@ -48,65 +56,140 @@ $crystal = array();
  *
  */
 $crystal['lang']         = 'sv';
-$crystal['title_append'] = ' | Crystal en webbtemplate';
+$crystal['title_append'] = ' | RM Rental Movies';
+
+$loginRow = isset($_SESSION['user']->name) && isset($_SESSION['user']->id) ? "<a href='users.php?id={$_SESSION['user']->id}' title='Visa profil'>{$_SESSION['user']->name}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href='logout.php' title='Logga ut'>Logga ut</a>" : "<a href='login.php' title='Logga in'>Logga in / Skapa konto</a>";
+$adminRow = isset($_SESSION['user']->name) && isset($_SESSION['user']->id) ? "<a href='admin.php' title='Adminsidan'>Adminsidan</a>&nbsp;&nbsp;|&nbsp;&nbsp;" : null;
+
+$crystal['menu_top'] = <<<EOD
+<span class='contents'>
+  <span class='left'>
+    Fri frakt om du hyr minst tre filmer
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    Beställningar innan 15:00 skickas nästa arbetsdag!
+  </span>
+  <span class='right'>
+    {$adminRow}
+    <a href='users.php' title='Användarsidor'>Användarsidor</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    {$loginRow}
+  </span>
+</span>
+EOD;
 
 $crystal['header'] = <<<EOD
-<img class='sitelogo' src='img/crystal_logo.png' alt='Crystal Logo'/>
-<span class='sitetitle'>Crystal webbtemplate</span>
-<span class='siteslogan'>Återanvändbara moduler för webbutveckling med PHP</span>
+<span class='sitelogo'></span>
+<span class='sitetitle'>RM Rental Movies</span>
+<span class='siteslogan'>Din hyrfilmsbutik på nätet!</span>
+<form action='movies.php' class='sitesearch'>
+  <input type='search' name='search' placeholder='Sök film eller person' maxlength='32'/>
+  <input type='submit' value='Sök'/>
+</form>
 EOD;
 
+$thisYear = date('Y');
 $crystal['footer'] = <<<EOD
 <footer>
-  <span class="sitefooter">
-    Copyright © Richard Storm (<a href='mailto:richard.storm@live.se'>richard.storm@live.se</a>) 
-    <!--| <a href='https://github.com/richardstorm/Crystal-base' target='_blank'>Crystal på GitHub</a> -->
-    | <a href='http://validator.w3.org/unicorn/check?ucn_uri=referer&amp;ucn_task=conformance'>Unicorn</a>
-    <!-- | <a href='cookies.php' title="Cookies">Cookies</a>-->
+  <span class='sitefooter'>
+    Copyright © {$thisYear} RM Rental Movies. All rights reserved.
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href='http://validator.w3.org/unicorn/check?ucn_uri=referer&amp;ucn_task=conformance' title='Validera sidan med Unicorn'>Unicorn</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    Org.nr. 123456-7890
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    E-post <a href='mailto:info@rmrental.com' title='Maila oss'>info@rmrental.com</a>
   </span>
-</footer>
-EOD;
-
-$crystal['byline'] = <<<EOD
-<footer class="byline">
-  <figure class="right"><img src="img/me/me_by.jpg" alt="Richard Storm">
-    <figcaption>Richard Storm</figcaption>
-  </figure>
-  <p>Richard Storm studerar i kursen Databaser och Webbprogrammering vid Blekinge Tekniska Högskola.</p>
-  <p>Richards webbanknytna programmeringskunskaper är följande: PHP, HTML, CSS, SQL och JavaScript.</p>
-  <p>Dessutom är denne man bekant med programmeringsspråken C och Lua.</p>
-
-  <ul class='icons'>
-    <li><a href='http://google.com/+RichardStorm' target='_blank' ><img src='img/glyphicons/png/glyphicons_362_google+_alt.png' alt='google+-icon' title='Richard Storm på Google+' width='24' height='24'/></a></li>
-    <li><a href='http://www.facebook.com/storm.richard' target='_blank' ><img src='img/glyphicons/png/glyphicons_390_facebook.png' alt='facebook-icon' title='Richard Storm på Facebook' width='24' height='24'/></a></li>
-    <li><a href='http://youtube.com/c/RichardStorm' target='_blank' ><img src='img/glyphicons/png/glyphicons_382_youtube.png' alt='youtube-icon' title='Richard Storm på YouTube' width='24' height='24'/></a></li>
-    <!--<li><a href='http://github.com/richardstorm/' target='_blank' ><img src='img/glyphicons/png/glyphicons_381_github.png' alt='github-icon' title='Richard Storm på GitHub' width='24' height='24'/></a></li>-->
-    <li><a href='http://instagram.com/richardstorm/' target='_blank' ><img src='img/glyphicons/png/glyphicons_412_instagram.png' alt='instagram-icon' title='Richard Storm på Instagram' width='24' height='24'/></a></li>
-  </ul>
-
 </footer>
 EOD;
 
 
 
 /**
- * The navbar
+ * Settings for the database.
  *
  */
-$crystal['navbar'] = null; // To skip the navbar
-/*$crystal['navbar'] = array(
+define('DB_USER', 'root'); // The database username
+define('DB_PASSWORD', ''); // The database password
+$crystal['database']['dsn']            = 'mysql:host=localhost;dbname=rist15;';
+$crystal['database']['username']       = DB_USER;
+$crystal['database']['password']       = DB_PASSWORD;
+$crystal['database']['driver_options'] = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'");
+
+
+/**
+ * Define the menu as an array
+ */
+$crystal['navbar'] = array(
+  // Use for styling the menu
   'class' => 'navbar',
-  'items' => array(
-    'page1' => array('text'=>'Text',  'url'=>'page1.php',  'title' => 'Hovering text'),
-    'page2' => array('text'=>'Text',  'url'=>'page2.php',  'title' => 'Hovering text'),
-    'page3' => array('text'=>'Text',  'url'=>'page3.php',  'title' => 'Hovering text'),
+ 
+  // Here comes the menu structure
+  'items' => array(    
+    // This is a menu item
+    'start' => array(
+      'text'  => 'Start',
+      'url'   => 'start.php',
+      'title' => 'Startsidan',
+    ),
+    
+    // This is a menu item
+    'movies' => array(
+      'text'  => 'Filmer',
+      'url'   => 'movies.php',
+      'title' => 'Lista av tillgängliga filmer',
+    ),
+    
+    // This is a menu item
+    'news'    => array(
+      'text'  => 'Nyheter',
+      'url'   => 'news.php',
+      'title' => 'Blogglista med nyheter',
+    ),
+    
+    // This is a menu item
+    'contest'  => array(
+      'text'  => 'Tävling',
+      'url'   => 'contest.php',
+      'title' => 'Tävla och vinn gratis filmer'
+    ),
+    
+    // This is a menu item
+    'calendar'  => array(
+      'text'  => 'Filmkalendern',
+      'url'   => 'calendar.php',
+      'title' => 'Filmkalendern med månadens film'
+    ),
+    
+    // This is a menu item
+    'about'  => array(
+      'text'  => 'Om RM',
+      'url'   => 'about.php',
+      'title' => 'Information om RM Rental Movies'
+    ),
+    
+    /*// This is a menu item
+    'login'  => array(
+      'text'  => 'Logga in',
+      'url'   => 'login.php',
+      'title' => 'Logga in'
+    ),
+    
+    // This is a menu item
+    'source'  => array(
+      'text'  => 'Källkod',
+      'url'   => 'source.php',
+      'title' => 'Visa källkod'
+    ),*/
   ),
-  'callback_selected' => function($url) {
+ 
+  // This is the callback tracing the current selected menu item base on scriptname
+  'callback' => function($url) {
     if(basename($_SERVER['SCRIPT_FILENAME']) == $url) {
       return true;
     }
   }
-);*/
+);
+
 
 
 
@@ -116,6 +199,7 @@ $crystal['navbar'] = null; // To skip the navbar
  */
 //$crystal['stylesheet'] = 'css/style.css';
 $crystal['stylesheets'] = array('css/style.css');
+$crystal['stylesheets'][] = 'css/movie.css';
 $crystal['favicon']    = 'favicon.ico';
 
 

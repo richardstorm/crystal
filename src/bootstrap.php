@@ -17,6 +17,7 @@ set_exception_handler('myExceptionHandler');
 /**
  * Autoloader for classes.
  *
+ * @param string $class the name of the class.
  */
 function myAutoloader($class) {
   $path = CRYSTAL_INSTALL_PATH . "/src/{$class}/{$class}.php";

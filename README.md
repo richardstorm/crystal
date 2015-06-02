@@ -1,9 +1,9 @@
 Crystal-base
 =========
 
-A webbtemplate / boilerplate for smaller websites using PHP.
+A web template / boilerplate for smaller websites using PHP.
 
-Built by Richard Storm.
+Built by Richard Storm as a school project.
 
 
 
@@ -30,5 +30,7 @@ The following external modules are included and subject to its own license.
 
 
 ------------------
+ .  
+..:
 
 Copyright © 2015 Richard Storm
