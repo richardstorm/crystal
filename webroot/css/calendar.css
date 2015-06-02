@@ -1,0 +1,269 @@
+.calendar, .calendar .monthView, .calendar  .week, .calendar  .weekday, .calendar  .otherWeekday, .calendar figure {
+  border: 1px solid #ccc;
+}
+
+.calendar {
+  width: 678px;
+  background: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.calendar  a  {
+  text-decoration: none;
+}
+
+.calendar .monthTitle {
+  text-align: center;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+.calendar .navPrev, .calendar .navNext {
+  font-size: 14px;
+  line-height: 40px;
+  display: inline-block;
+  float: left;
+  text-align: left;
+  width: 120px;
+}
+
+.calendar .navNext {
+  float: right;
+  text-align: right;
+}
+
+.calendar .monthView {
+  margin: 10px;
+}
+
+.calendar .header {
+  text-transform: capitalize;
+}
+
+.calendar .week {
+  display: block;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  width: 26px;
+  height: 60px;
+  float: left;
+}
+
+.calendar .weekday, .calendar .otherWeekday {
+  display: block;
+  border-right: none;
+  border-bottom: none;
+  width: 89px;          /* (calendar - monthView margin) / 7) - left border = ((678 - 10*2 - 1*2) - 24) / 7 - 1 */
+  height: 60px;
+  text-align: right;
+  float: left;
+}
+
+.calendar .header .week, .calendar .header .weekday, .calendar .header .otherWeekday {
+  height: inherit;
+  text-align: center;
+  background: #eee;
+}
+
+.calendar .sunday {
+  color: red;
+}
+
+.calendar .monthView .header .week, .calendar .monthView .header .weekday, .calendar .monthView .header .otherWeekday {
+  border-top: none;
+}
+
+.calendar .weekNr {
+  text-align: center;
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.calendar .day {
+  display: inline-block;
+  margin-top: 4px;
+  margin-right: 4px;
+  font-size: 24px;
+  line-height: 24px;
+  float: right;
+}
+
+.calendar .otherWeekday .day {
+  font-size: 14px;
+  line-height: 14px;
+  color: #999;
+}
+
+.calendar .nameDay {
+  font-size: 8px;
+  display: inline-block;
+  text-align: left;
+  float: left;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.calendar .flagDay {
+  display: block;
+  width: 20px;
+  height: 15px;
+  background-image: url(../img/calendar/flag.png);
+  float: right;
+  clear: right;
+  margin-right: 4px;
+  margin-top:4px;
+}
+
+.calendar .moon-1, .calendar .moon-3, .calendar .moon-5, .calendar .moon-7 {
+  display: block;
+  width: 15px;
+  height: 15px;
+  clear: left;
+  float: left;
+  margin-left: 4px;
+  margin-top:4px;
+}
+
+.calendar .moon-1 {background-image: url(../img/calendar/moon-1.png);}
+.calendar .moon-3 {background-image: url(../img/calendar/moon-3.png);}
+.calendar .moon-5 {background-image: url(../img/calendar/moon-5.png);}
+.calendar .moon-7 {background-image: url(../img/calendar/moon-7.png);}
+
+.calendar .otherWeekday .nameDay, .calendar .otherWeekday .flagDay, .calendar .otherWeekday .moon-1, .calendar .otherWeekday .moon-3, .calendar .otherWeekday .moon-5, .calendar .otherWeekday .moon-7 {
+  display: none;
+}
+
+/**
+ * Figure
+ */
+.calendar figure {
+  display: block;
+  margin: 10px;
+}
+
+.calendar figure img {
+  display: block;
+  width: 100%;
+  height: 410px;
+}
+
+/**
+  * Small calendar
+  */
+.smallCalendar, .smallCalendar .monthView, .smallCalendar  .week, .smallCalendar  .weekday, .smallCalendar .otherWeekday, .smallCalendar figure {
+  border: none;
+}
+
+.smallCalendar {
+  width: 279px;
+}
+
+.smallCalendar  a  {
+  text-decoration: none;
+}
+
+.smallCalendar .monthTitle {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.smallCalendar .navPrev, .smallCalendar .navNext {
+  display: inline-block;
+  float: left;
+  text-align: left;
+  width: 40px;
+}
+
+.smallCalendar .navNext {
+  float: right;
+  text-align: right;
+}
+
+.smallCalendar .monthView {
+  margin: 0px;
+  border: 1px solid #ccc;
+}
+
+.smallCalendar .header {
+  text-transform: capitalize;
+}
+
+.smallCalendar .week {
+  display: block;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  width: 25px;
+  height: 28px;
+  float: left;
+}
+
+.smallCalendar .weekday, .smallCalendar .otherWeekday {
+  display: block;
+  border-right: none;
+  border-bottom: none;
+  width: 36px;          /* (calendar - monthView border - week width) / 7 = (279 - 2*1 - 25) / 7 */
+  height: 28px;
+  text-align: right;
+  float: left;
+}
+
+.smallCalendar .header .week, .smallCalendar .header .weekday, .smallCalendar .header .otherWeekday {
+  height: inherit;
+  text-align: center;
+  background: #eee;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+}
+
+.smallCalendar .sunday {
+  color: red;
+}
+
+.smallCalendar .monthView .header .week, .smallCalendar .monthView .header .weekday, .smallCalendar .monthView .header .otherWeekday {
+  border-top: none;
+}
+
+.smallCalendar .weekNr {
+  text-align: center;
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.smallCalendar .day {
+  display: inline-block;
+  margin-top: 6px;
+  margin-right: 6px;
+}
+
+.smallCalendar .day {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.smallCalendar .otherWeekday .day {
+  font-size: 10px;
+  line-height: 10px;
+  color: #999;
+}
+
+.smallCalendar .nameDay, .smallCalendar .flagDay, .smallCalendar .moon-1, .smallCalendar .moon-3, .smallCalendar .moon-5, .smallCalendar .moon-7  {
+  display: none;
+}
+
+/**
+ * Figure
+ */
+.smallCalendar figure {
+  display: none;
+}

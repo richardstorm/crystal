@@ -1,0 +1,76 @@
+.blogpost .publisher, .blogposts .publisher, .latestPosts .publisher {
+  font-size: 10px;
+  position: relative;
+  top: -18px;
+  margin-bottom: -10px;
+}
+
+.blogpost p, .blogpost ul, .blogposts p, .blogposts ul, .latestPosts p, .latestposts ul {
+  font-size: 15px;
+}
+
+.latestPosts h2 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.latestPosts article {
+  background: white;
+  margin-right: 10px;
+  color: #333;
+  margin-bottom: 10px;
+  padding: 4px;
+}
+
+.blogposts {
+  float: right;
+  display: inline-block;
+  width: 81%;
+  margin: 10px 0;
+}
+
+.blogposts h1 {
+  margin-top: 0;
+}
+
+.blogpost  .categoryfooter, .blogpost footer, .blogposts footer {
+  font-size: 10px;
+}
+
+.blogcategories {
+  display: block;
+  width: 18%;
+  float: left;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px #ddd;
+  margin-bottom: 1em;
+}
+
+.blogcategories .title {
+  color: white;
+  font-weight: bold;
+  background-color: #39F;
+  border-color: #39F;
+  height: 24px;
+  display: block;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  padding: 4px 8px;
+}
+
+.blogcategories .category:last-child {
+  border: none;
+}
+
+.blogcategories .category {
+  padding: 4px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.blogcategories a.selected {
+  font-weight: bold;
+  padding-left: 8px;
+}

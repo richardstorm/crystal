@@ -1,0 +1,302 @@
+.searchresult {
+  font-family: Century gothic, sans-serif;
+  float: right;
+  display: inline-block;
+  width: 81%;
+  margin-top: 10px;
+}
+
+.searchresult .searchheader {
+  display: inline-block;
+  width: 100%;
+}
+
+.searchresult .hits {
+  float: left;
+}
+
+.searchresult .hitsPerPage {
+  float: right;
+}
+
+.searchresult .hitsPerPage strong, .searchresult .orderBy strong {
+  font-size: 12px;
+}
+
+.searchresult .orderBy { 
+  float: right;
+  margin-left: 1em;
+}
+
+.searchresult .pagination {
+  clear: left;
+  margin: 1em 0;
+  text-align: center;
+}
+
+
+.movieSearch  {
+  float: right;
+  display: inline-block;
+  width: 81%;
+  margin-top: 11px;
+  color: white;
+  font-weight: bold;
+  background-color: #39F;
+  border-color: #39F;
+  height: 24px;
+  border-radius: 4px;
+  padding: 4px 0;
+}
+
+.movieSearch input[type="search"] {
+  margin: 0 8px;
+  border-radius: 4px;
+  width: 85%;
+}
+
+.movieSearch input[type="submit"] {
+  margin-right: 8px;
+  border-radius: 4px;
+  width: 10%;
+}
+
+.movie {
+  display: block;
+  background-color: white;
+  float: left;
+  margin: 8px;
+  width: 180px;   /* 180 */
+  height: 294px;  /* 270 + 24 */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px #ddd;
+}
+
+.movie:hover {
+  border: 1px solid #aaa;
+  box-shadow: 2px 2px 4px #aaa;
+}
+
+.movie:hover .rent {
+  opacity: 1;
+}
+
+.movie .title {
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  padding-left: 8px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.movie .image {
+  display: block;
+  border-top: 1px solid #eee;
+  width: 180px;
+  height: 270px;
+}
+
+.movie .rent {
+  display: inline-block;
+  width: 40px;
+  height: 28px;
+  background: #c00;
+  color: white;
+  line-height: 28px;
+  text-align: center;
+  position: relative;
+  top: -32px;
+  left: 2px;
+  opacity: 0.65;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.movie .rent a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.genres {
+  display: block;
+  width: 18%;
+  float: left;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px #ddd;
+  margin-bottom: 1em;
+}
+
+.genres .title {
+  color: white;
+  font-weight: bold;
+  background-color: #39F;
+  border-color: #39F;
+  height: 24px;
+  display: block;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  padding: 4px 8px;
+}
+
+.genres .genre:last-child {
+  border: none;
+}
+
+.genres .genre {
+  padding: 4px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.genres a.selected {
+  font-weight: bold;
+  padding-left: 8px;
+}
+
+
+.latestMovies .movie, .mostRentedMovies .movie, .lastRentedMovies .movie {
+  width: 144px;   /* 144 */
+  height: 232px;  /* 216 + 18 */
+}
+
+.latestMovies .movie .title, .mostRentedMovies .movie .title, .lastRentedMovies .movie .title {
+  padding-left: 4px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 11px;
+}
+
+.latestMovies .movie .image, .mostRentedMovies .movie .image, .lastRentedMovies .movie .image {
+  width: 144px;
+  height: 216px;
+}
+
+
+form input[class="year"] {
+  width: 60px;
+}
+
+.movieDetails {
+  font-family: Century gothic, sans-serif;
+  font-size: 16px;
+  margin-top: 24px;
+}
+
+.movieDetails .image {
+  float: left;
+  width: 240px;
+}
+
+.movieDetails .metadata {
+  float: left;
+  margin-left: 20px;
+  width: 720px;
+}
+
+.movieDetails .title, .movieDetails .year {
+  font-size: 32px;
+  line-height: 32px;
+  float: left;
+}
+
+.movieDetails .year {
+  margin-left: 14px;
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.movieDetails .orgTitle, .movieDetails .imdb, .movieDetails .trailer {
+  float: left;
+  clear: left;
+}
+
+.movieDetails .genre {
+  float: left;
+  margin-bottom: 0.5em;
+}
+
+.movieDetails .orgTitle {
+  color: grey;
+  margin-bottom: 0.5em;
+}
+
+.movieDetails .length {
+  clear: left;
+}
+
+.movieDetails .length, .movieDetails .spacer {
+  float: left;
+}
+
+.movieDetails .spacer {
+  margin: 0 8px;
+  color: #ccc;
+}
+
+.movieDetails .plot, .movieDetails .directors, .movieDetails .actors {
+  float: left;
+  clear: left;
+  display: block;
+  margin-top: 0.5em;
+}
+
+.movieDetails .action {
+  clear: both;
+  font-size: 13px;
+}
+
+
+/***************************
+ **   m o v i e F o r m   **
+ ***************************/
+ 
+.movieForm label {
+  float: left;
+}
+
+.movieForm .imdb {
+  clear: left;
+}
+
+.movieForm .image, .movieForm .imdb, .movieForm .urlTrailer {
+  margin-top: 1em;
+}
+
+.movieForm .actors, .movieForm .plot, .movieForm .genre {
+  clear: left;
+  margin-top: 1em;
+  width: 100%;
+}
+
+.movieForm .genre {
+  float: left;
+}
+
+.movieForm .genre label {
+  width: 120px;
+}
+
+.movieForm textarea {
+  width: 100%;
+  font-family: inherit;
+}
+
+.movieForm .actors textarea {
+  height: 36px;
+}
+
+.movieForm .plot textarea {
+  height: 100px;
+}
+
+.movieForm input[type="submit"] {
+  clear: both;
+  float: left;
+  margin-top: 1em;
+}

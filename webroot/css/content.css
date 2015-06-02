@@ -1,0 +1,40 @@
+/*******************************
+ **   c o n t e n t F o r m   **
+ *******************************/
+ 
+.contentForm label {
+  float: left;
+  display: inline-block;
+}
+
+.contentForm .title, .contentForm .date {
+  margin-bottom: 1em;
+}
+
+.contentForm .data {
+  width: 99%;
+  margin-bottom: 1em;
+}
+
+.contentForm textarea {
+  font-family: inherit;
+}
+
+.contentForm .date, .contentForm .data {
+  clear: left;
+}
+
+.contentForm  textarea {
+  height: 160px;
+  width: 100%;
+}
+
+.contentForm input[type="submit"] {
+  clear: left;
+  float: left;
+}
+
+.contentForm input[type="reset"] {
+  float: left;
+  margin-left: 1em;
+}

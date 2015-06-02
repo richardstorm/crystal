@@ -1,0 +1,71 @@
+.userDetails .image, .userDetails .metadata {
+  float: left;
+  margin-top: 10px;
+}
+
+.userDetails .action {
+  clear: left;
+  font-size: 13px;
+}
+
+.userDetails span {
+  display: block;
+}
+
+.userDetails span strong {
+  width: 90px;
+  display: inline-block;
+}
+
+.userlist {
+  font-family: Century gothic, sans-serif;
+  display: block;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.userlist .userheader {
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.userlist .hits {
+  float: left;
+}
+
+.userlist .hitsPerPage {
+  float: right;
+}
+
+.userlist .hitsPerPage strong, .userlist .orderBy strong {
+  font-size: 12px;
+}
+
+.userlist .orderBy { 
+  float: right;
+  margin-left: 12px;
+}
+
+.userlist .pagination {
+  clear: left;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.userlist table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.userlist table th {
+  background-color: #39F;
+  text-align: left;
+}
+
+.userlist tr:nth-child(odd) {
+  background: #ccc;
+}

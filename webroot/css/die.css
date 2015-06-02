@@ -1,0 +1,174 @@
+/**
+ * CSS sprite for a dice game where dice has six faces.
+ *
+ */
+ul.die {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+}
+ 
+ul.die li {
+  padding: 0;
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  display: block;
+  float: left;
+  background: url(../img/die/die-faces.jpg) no-repeat;
+}
+ 
+ul.die li.die-1 { background-position: -160px 0px; }
+ul.die li.die-2 { background-position: -128px 0px; }
+ul.die li.die-3 { background-position:  -96px 0px; }
+ul.die li.die-4 { background-position:  -64px 0px; }
+ul.die li.die-5 { background-position:  -32px 0px; }
+ul.die li.die-6 { background-position:    0px 0px; }
+
+#diceGamePlayArea {
+  background: #adf;
+  width: 640px;
+  height: 240px;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+#diceGamePlayArea .gameMenu {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+#diceGamePlayArea button {
+  background: white;
+  color: #39f;
+  width: 80px;
+  height: 60px;
+  margin: 0 8px;
+  border: 1px solid #39f;
+}
+
+#diceGamePlayArea button:hover {
+  background: #39f;
+  color: white;
+  border: 1px solid #adf;
+}
+
+#diceGamePlayArea button:disabled {
+  background: #ccc;
+  color: grey;
+}
+
+#diceGamePlayArea .diceRes {
+  height: 32px;
+  text-align: center;
+  display: block;
+  width: 96px;
+  margin: 36px auto 26px;
+}
+
+#diceGamePlayArea .diceRes .text {
+  margin: 0;
+  padding: 0;
+  height: 32px;
+  width: 64px;
+  line-height: 32px; 
+  font-size: 32px;
+  float: left;
+  display: block;
+}
+
+#diceGamePlayArea #scoreArea1, #diceGamePlayArea #scoreArea2 {
+  display: inline-block;
+  width: 318px;
+  margin-right: 2px;
+}
+
+#diceGamePlayArea #scoreArea2 {
+  margin: 0 0 0 2px;
+}
+
+#diceGamePlayArea .otherPlayer {
+  opacity: 0.3;
+}
+
+#diceGamePlayArea .player {
+  display: block;
+  height: 18px;
+  width: 104px;
+  font-size: 12px;
+  background: #39f;
+  font-weight: bold;
+  color: white;
+  padding: 2px 8px;
+}
+
+#diceGamePlayArea .score {
+  height: 64px;
+  width: 79px;
+  display: inline-block;
+  line-height: 36px; 
+  font-size: 24px;
+  text-align: center;
+  background: white;
+  overflow: hidden;
+}
+
+#diceGamePlayArea .scoreText {
+  font-size: 10px;
+  display: block;
+  height: 24px;
+  line-height: 24px;
+}
+
+#diceGamePlayArea .score .total {
+  font-size: 16px;
+}
+
+#diceGamePlayArea #gameWin {
+  display: block;
+  width: 360px;
+  height: 72px;
+  margin-top: 12px;
+  margin-left: 140px;
+  position: fixed;
+  text-align: center;
+  line-height: 72px;
+  font-size: 36px;
+  background: #096;
+  color: white;
+  
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  -moz-animation-name: blinker;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+
+  animation-name: blinker;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/*
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}*/

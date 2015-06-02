@@ -1,0 +1,36 @@
+.dbtable { 
+  font-size: 0.95em;
+}
+
+.dbtable table { 
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.dbtable table td, .dbtable table th {
+  padding: 0.2em 1em;
+}
+
+.dbtable table th {
+  background: #adf;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.dbtable table tr:nth-child(even) {
+  background: white;
+}
+
+.dbtable table tr:nth-child(odd) {
+  background: #eee;
+}
+
+.dbtable .rows {
+  text-align: right;
+}
+
+.dbtable .pages {
+  text-align: center;
+}
