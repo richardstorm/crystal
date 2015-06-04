@@ -62,7 +62,7 @@ class CImage {
     // Use DIRECTORY_SEPARATOR to make it work on both windows and unix.
     //
     define('IMG_PATH', dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR);
-    define('CACHE_PATH', __DIR__ . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR);
+    define('CACHE_PATH', dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR);
 
     $this->maxWidth = $this->maxHeight = 2000;
     $this->getAndValidateIncomingArguments();
